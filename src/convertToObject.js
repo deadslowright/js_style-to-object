@@ -14,6 +14,7 @@ function convertToObject(sourceString) {
     .map((styles) => styles.trim())
     .filter((styles) => styles.length > 0)
     .map((styles) => styles.split(':'))
+    .filter((parts) => parts.length === 2)
     .reduce((styleObject, [property, value]) => {
       styleObject[property.trim()] = value.trim();
 
